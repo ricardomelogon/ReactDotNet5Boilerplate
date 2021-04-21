@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="./logo.png" />
+  <meta name="description" content="Void Paper" />
+  <title>Void Paper</title>
+</head>
+
+<body>
+  <noscript> You need to enable JavaScript to run this app. </noscript>
+  <div id="root"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkv7nkd6jTb6ArcRrJkwmhLjcq7Vz9HRE&libraries=places"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('%PUBLIC_URL%/serviceWorker.js')
+        .then((reg) => {/*console.log('Success: ', reg.scope)*/})
+        .catch((err) => {/*console.log('Failure: ', err)*/});
+      })
+    }
+  </script>
+  <script> if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer </script>
+</body>
+</html>
